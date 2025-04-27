@@ -1,0 +1,33 @@
+#POSIBLE SOLUCION AL EJERCICIO 67 DE https://retosdeprogramacion.com/ejercicios/
+# Crea una función que reciba un número decimal y lo trasforme a Octal
+# * y Hexadecimal.
+# * - No está permitido usar funciones propias del lenguaje de programación que
+# * realicen esas operaciones directamente.
+
+def octal_hexadecimal(numero_decimal):
+    
+    #Declaramos las variables
+    
+    
+    numeracion_hexadecimal = "0123456789ABCDEF"
+    
+    def octal(numero_decimal):
+        numero_octal = ""
+        while numero_decimal > 0:
+            numero_octal += str(numero_decimal%8)
+            numero_decimal //= 8
+    
+        return int(numero_octal[::-1])
+
+    def hexadecimal(numero_decimal):
+        numero_hexadecimal = ""
+        while numero_decimal > 0:
+            numero_hexadecimal += numeracion_hexadecimal[numero_decimal%16]
+            numero_decimal  //= 16
+        
+        return numero_hexadecimal[::-1]
+    
+    print(f"El número: {numero_decimal} es igual a")
+    print(f"{octal(numero_decimal)} en base 8")
+    print(f"{hexadecimal(numero_decimal)} en base 16")
+        
